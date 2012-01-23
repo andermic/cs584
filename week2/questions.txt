@@ -1,0 +1,11 @@
+Subrahmaniyan:
+
+Why did more females try to fix formulas (edit formulas without any apparent attempt to evaluate the formulas), and why were they drastically more unsuccessful than the males who used the same technique?
+
+What are the advantages and limitations of using an unsupervised learning algorithm to study humans' interactions with a programming interface?
+
+Burnett:
+
+Males used more of every feature type than females, except one. What it is about wizard features in particular that made them so useful for females?
+
+Modern development environments are quite complicated, and various degrees of fluency with them are possible based on the amount of time a programmer practices with them. More fluency with one's development environment leads to greater productivity. Does this provide an advantage to females, because they tend to be loyal to one development environment, instead of spreading their development time among many?

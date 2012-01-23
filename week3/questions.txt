@@ -1,0 +1,21 @@
+Ko:
+
+The paper states that debugging tools have not progressed much beyond code-stepping, breakpoints, and print statements in the last 30 years. This may be related to another statement within the paper that generalizing an ID strategy for other languages could be difficult because of the shear number of possible "why did" and "why didn't" questions that such an interface could generate. Although ID was useful for this relatively simple Alice system, could this prevent it from being useful to debug more complex systems both in Alice and in other languages?
+
+When a system is designed in a top-down fashion rigorously, software engineers will diagram the interactions and data flow between the objects within the system before they begin coding. This is useful partly because when one object in a system does not work correctly, a programmer can quickly look at the diagram to see what other objects in the system give input to the broken object, and more easily hypothesize which blocks of code may be broken. The paper states that the argument for ID is that correctly hypothesizing what runtime actions caused failure facilitates efficient debugging. Does this imply that programmers should place a greater emphasis on this type of top-down design?
+
+Pane:
+
+Some common themes of natural programming as described in the paper are aggregate operations, high-level queries, graphical depictions of objects, and natural language usage. How would these themes be implemented in another environment we have already studied, such as end-user programming in Excel spreadsheets?
+
+The paper studies the way that non-programmers tend to think about programming, describes the design of a language that fits with that type of thinking, and demonstrates its usability for non-programmers. Would a language designed with the given natural programming themes also be more usable for experienced programmers?
+
+Insight:
+
+In my Python libraries that allow representations of HTML/CSS/JavaScript constructs, I would like to include the high-level queries and aggregate operations suggested in the Pane paper. Specifically, I will include queries that return all of the elements of the DOM with some property or group of properties (e.g. all divs with class=foo). The returned list of elements will then be able to be manipulated (e.g. make them all hidden) with a single line of code as opposed to iterating through them one by one.
+
+Provide a gentle slope system in my design?
+Use high-level constructs similar to programmers' internal representations of data to aid in usability
+Language uses cards as objects, with each object having name-value pairs
+Support for queries and operations on objects performed in aggregate... iteration through individual objects not required
+Close to natural language, no weird syntax or arcane punctuation
