@@ -1,0 +1,64 @@
+"This assignment is mainly to keep you on track for your project.
+Do whatever research you can into your consumer and their habits, problems, and tasks. Any combination of interviewing, observing, just remembering and jotting down things you can remember, collecting artifacts that you can (like their spreadsheets or worksheets) is fine.
+I realize that some consumers will be more available to you than others. Thus, if you make a solid effort to do research that is reasonable for your situation, you get a '1'; else a '0'."
+
+How Rob does web development:
+
+Front-end:
+Think about design in general
+Play around with design ideas using a whiteboard
+Play with css values until site renders correctly (colors, widths, font sizes) etc.
+
+Back-end:
+Ignore visuals for server side, just make sure that logic is correct
+Check server-side output using command line output
+Connect back-end to front-end if command line output is correct
+
+
+Consumer research:
+
+I asked Rob McGuire-Dale, my consumer, to describe the process he goes through as he designs and codes web-based systems.
+
+First he thinks about the best way to split the computation of his system into a frontend client-side half and backend server-side half.
+
+To make the frontend, he will first decide how his site will look by comparing different visual layouts with a whiteboard or scrap paper. Then once he makes the html skeleton, he will make a rough draft of the css and play with different values for color, width, etc. for the various objects in the DOM until the site looks like the design on his mind/whiteboard/paper. Finally, he writes JavaScript that implements any necessary frontend computation or event-driven visual effects.
+
+To make the backend, he forgets about anything visual and graphical, and instead focuses on getting the backend code logic correct. This code typically involves access of a centralized database and/or computation that is too resource intensive to offload on the client's browser. To test the backend code he likes to print sample output to a command-line console.
+
+Once the frontend visuals and backend logic are correct, he needs to set up a system that allows the server and client to pass information back and forth to each other. His final step then is to connect the two with the HttpRequest and HttpResponse objects built into Django, his favorite Python web framework. This can be unneccessarily tedious, because it requires communication between an all-purpose backend programming language (Python) and the web-specific frontend languages (HTML, CSS, JavaScript). Python, HTML/CSS, and JavaScript were developed at different times by different groups of people for different purposes.
+
+
+Insights:
+
+1) One of the great things that my software can and should do is eliminate the final step of Rob's process, the unnatural passing of information between client and server languages. This is a typical example of what client-server interaction looks like in code:
+
+.
+.
+.
+(Client-side JavaScript): client_int = client_int + 1;
+(Client-side JavaScript): [Send the value of client_int to server using an http request];
+(Server-side Python):	  server_int = [Parsed http request]
+(Server-side Python):	  [Do some computation with server_int]
+(Server-side Python):	  [Send computation results to client using an http response]
+(Client-side JavaScript): client_result = [Parsed http response];
+.
+.
+.
+
+The JavaScript and Python code in this example are of course in separate files, making it painful for the programmer to shuffle back and forth between the two. In addition, extra code has to be written to parse requests and responses, and to serialize and deserialize data structures passed back and forth through JSON or some other similar protocol. Instead, this code block should be in one file and should look like the following:
+
+.
+.
+.
+(Python): client_int = client_int+1
+(Python): server_int = client_int
+(Python): client_result = [Some computation with server_int]
+.
+.
+.
+
+The interaction between the server and client is abstracted from the programmer's view, making the coding process much more natural.
+
+2) Rob currently tests his frontend and backend separately, because frontend output tends to be visually or graphically oriented, while backend output tends to be data oriented, and because of the aforementioned difficulty of communicating naturally between the two. A goal to keep in mind is that my library should eliminate the need for backend testing on the command line in as many situations as possible. If he first creates at least a rough draft of the frontend before coding the backend, he should be able to easily visualize the results of his backend number crunching in the browser instead of reading the results off the console.
+
+3) Another goal I should consider is the elimination of the first step of Rob's process, where he decides which computation should be done client-side and which should be done server-side. It may be possible for my library to effectively automate this process by giving as much computation to the server as is reasonably possible. Too much server-side computation could slow down the site by requiring many more requests and responses than are necessary, but a good implementation of my library that considers the tradeoffs could speed up both my consumer's development of his sites and execution of the finished sites themselves.

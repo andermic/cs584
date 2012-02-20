@@ -1,0 +1,77 @@
+- Inherit some HTML class defined in my library
+- Instead of writing HTML, store that information into a Python data structure (here I'm using nested classes)
+- other possible data structures: lists, dictionaries, or some custom tree structure
+
+
+HTML:								Equivalent Python:
+								
+								from Html import HTML
+<html>								class Site(HTML):
+ <head>								 class head:
+  <title>An Example Website</title>				  class title: text='An Example Website'
+ </head>								
+								 
+ <body>								 class body:
+								  
+  <h4 id=some_header>An Unordered List:</h4>			  class h4: id='some_header' text='An Unordered List:'
+  <ul>								   class ul:
+   <li>Coffee</li>						    class li: text='Coffee'
+   <li>Tea</li>							    class li: text='Tea'
+   <li>Milk</li>						    class li: text='Milk'
+  </ul>								
+								my_site = site()
+ </body>
+
+</html>
+
+
+
+- A CSS document is simply some sets of key-value pairs
+- Natural mapping to the idea of a Python dictionary
+- So make a list of dictionaries to represent a CSS document
+
+
+CSS:								Equivalent Python:
+
+								css = []
+body								css += {'body':
+{								{
+width:80%;							'width':'80%',
+margin-left:9%;							'margin-left':'9%',
+border:1px solid #000;						'border':'1px solid',
+}								}}
+								
+.some_css_class							css += {'.some_css_class':
+{								{
+float: left;							'float':'left',
+width: 33%;							'width':'33%',
+background:#809900;						'background':'#809900',
+}								}}
+								
+#some_id							css += {'#some_id':
+{								{
+float: left;							'float':'right',
+width: 34%;							'color':'red',
+background:#eff2df;						'background':'#eff2df'
+}								}
+
+
+
+- JavaScript with JQuery is a general-purpose scripting language
+- Python is a general-purpose scripting language
+- Must include DOM queries in my library
+- Must also include browser functions like cookies in my library
+- Other than that, can translate from Python into JavaScript with JQuery
+
+
+
+JavaScript with JQuery:						Equivalent Python:
+
+								from JavaScript import *
+								from datetime import date
+var now = new Date();						now = date()
+if(now.getHours() >= 12)					if now.hour >= 12:
+{								    
+    var goodDay = $('p[title="Good Day Message"]');		    goodday =
+    goodDay.text('Good Afternoon!');				    goodday = 
+}

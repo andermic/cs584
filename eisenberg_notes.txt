@@ -1,0 +1,54 @@
+[Find images to include in my presentation whenever reasonable. May use an image per slide]
+
+Outline:
+
+1.) Name of paper. My name.
+
+2.) APIs have become varied and large in recent years, because software engineers have really enbraced the ideas of abstracting out unnecessary details and reusing commonly-needed code and reinventing the wheel. Being able to learn the functionality of a new API has taken on increased importance.
+
+3.) Static docstrings (comments that describe the functionality of each method in an API) are the standard type of API documentation. Ill-suited to helping programmers figure out which API method(s) they should use to solve the problem that's in front of them. This is because:
+i.) Programmers are forced to browse through documentation, looking for the class or method that implements the action that they are trying to perform.
+ii.) Programmers may lack knowledge of which classes and methods are used most commonly in practice.
+iii.) Programmers may think about their problem using a different terminology than the API developers. Example: Suppose a programmer wants an API function that finds the largest element in an array. In other APIs or programming languages the programmer may have seen such a function called "max()" or "maximum()", while the API developer may think it's more natural to call such a function "largest()". This would make it harder for the programmer to find the function that they need.
+
+4.) [Consider making this a later slide]) As a solution to these problems, the authors propose a system called Apatite (Associative Perusal of APIs That Indentifies Targets Easily).
+
+5.) Previous work:
+Other Tools. [Have to read referenced papers on similar tools to understand their strengths and weaknesses]
+Programmer studies. Through a study, one paper concludes that programmers attempting to use an unfamiliar API were observed going through six distinct phases: initial design, high-level API understanding, architectural design, finding methods, finding examples, and integrating examples. Apatite targets programmers still in the "finding methods" or earlier phases. [If I use this slide, must read paper to understand description of other phases, since they are unclear here.]
+Psychology of searching and retrieving. Research shows that people's memories are based on associations. Can think of memory as a huge graph or mesh of concept nodes [may be able to create or find an image that illustrates this concept... saw something similar that psychologist showed me during a break during the IQ test I took when I was 16], where edges are relationships between concepts. Programmers prefer to find associations to make a small series of steps to their goal, rather than to make one large step. Traditional API search tools don't support searches by association, Apatite does.
+
+6.) [This whole slide should be Figure 2 on page 3. Be prepared to explain everything in this image]
+-Each vertical column is a step in the search. Search progresses from left to right. Leftmost column is what appears when the program is first opened.
+-Packages are namespaces, i.e. related classes that are grouped together. Classes are API classes. Methods are API methods. Actions are verbs that describe the type of functionality that programmers are trying to achieve. Properties are getters and setters for data members of a class, and "is" methods (various methods with boolean types: isEmpty(), isString(), isNegative()).
+-Font size is representative of how often constructs are used by programmers in general.
+-The generation of a third column ranks entries based on their association with BOTH of the previous columns.
+-All previous columns are clickable, so users can backtrack.
+
+7.) [Include parts of Fig. 1 or Fig. 3 to demonstrate filter and accordion functionality]
+
+8.) How does Apatite determine associations between the constructs of an API?
+Two methods:
+i.) Analyze search engine data for popular APIs.
+ii.) Analyze a large body of source code for less popular APIs.
+
+9.) How are actions implemented? Use the documentation of individual methods. Find the verbs in the documentation, filter out verbs that are common (is, has, return, call), and count how many times the verb appears in the documentation text to get a correlation.
+
+10.) Limitations: 
+i.) Name collisions 
+i1.) ...can occur between classes/packages in a single API, making it unclear which of the same-named methods is useful for the task at hand.
+i2.) ...between APIs prevent Apatite from easily displaying results from more than one API in a single interface.
+ii.) Not useful for APIs too new to be popular and too new to have large codebases to analyze.
+
+11.) Future Work
+i.) Apatite was originally developed with experienced programmers in mind, but it may be useful for new programmers as well. In particular, new programmers may find it easier to search by actions than often arcane looking function and class names.
+ii.) Since human memory generally tends to work through association, implementing search through association may be useful in completely unrelated domains. It may be useful in any domain where people are required to explore large heterogeneous data sets.
+
+12.) Conclusion
+Apatite is a tool for browsing APIs through association. It also allows programmers to browse verb first when needed. Authors have developed techniquies for extracting popularity and association statistics from web data and existing source code.
+
+http:/www.cs.cmu.edu/~apatite
+
+Insight:
+
+Was looking for a way to provide documentation and examples to my API, and the paper reminded me of something.... Can add doc strings to each method and data type in my api, so that my consumer can use the help keyword built into Python to see examples of how my constructs map to constructs in HTML, CSS, and (in particular) JavaScript.

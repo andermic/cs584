@@ -1,0 +1,15 @@
+Design barriers. "I don't know what I want the computer to do."
+
+Selection barriers. "I know what I want the computer to do, but I don't know what constructs in this programming language
+to use."
+
+Coordination barriers. "I know what I want to use, but I don't know how to combine constructs to create complex
+functionality."
+
+Use barriers. "I know what to use, but I don't have a full enough understanding of the syntax and semantics of the
+constructs to use them properly."
+
+Understanding barriers. "I thought I knew how to use this, but compiler errors and runtime errors don't make sense to me."
+
+Information barriers. "I think I know why it didn't do what I expected, but I don't know how to get the value of internal
+variables."
