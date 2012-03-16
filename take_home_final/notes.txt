@@ -1,0 +1,55 @@
+Attention Investment
+	-Read Excel to Attn Investment, Cogn, & Rep Bench. Week 5.
+
+Detienne chapter
+	-Week 2
+	
+Natural Programming
+	-Week 3
+
+Idea Garden
+	-Week 6
+
+Learning Barriers
+	-Week 6
+
+Goals of project:
+-Eliminate unneccessary copy-pasting for similar media plans. His design allows importation of media plans and a dialogue allowing copying of features common to her recently made media plans. Provides a much-needed layer of abstraction.
+-Reduce error-proneness from mistakes in formulas. WYSIWYT interface for validating formulas.
+-Reduce tab navigation and thrashing through tabs. Tabs expand vertically to optimize use of screen real-estate and visibility.
+-Reduce cognitive load... through predictive text.
+
+Attention Investment:
+-GOAL OF THE PAPER: Define what is distinctive about the cognitive tasks involved with programming.
+
+-What is a programmer?
+	-The definition of "programmer" has expanded as time has gone forward. All computer users ought to be defined as potential programmers. Can I call Sanchit's consumer a potential programmer?
+	-What is a programming language? WYSIWYT may not be what happens when all programmers program.
+	-Even quite mundane user tasks can involve requirements gathering, specifications, design, coding, and debugging. {Describe how each of these concepts relates to Sanchit's consumers' task.}
+	-If all major software applications could be described as programming, our consumers' task may be relevant. "Abstract notation replaces direct manipulation".
+	-Describe how the consumer is not "manipulating observable things, but specifying behavior to occur at some future time."
+	-"We should analyze their experience in order to understand the general nature of programming activity."
+
+-Loss of direct manipulation
+	-Amount of direct manipulation is inversely proportional to prevalence of the frame problem.
+	-Sanchit's tool increases the loss in direct manipulation.
+	-"Frame problem": It is difficult to logically limit and constrain the effects of an action. How do we tell that an action does not have an infinite number of side-effects? Sanchit's tool increases the frame problem by providing a layer of abstraction over the consumers' work (Provide an example use-case).
+
+-Use of notation
+	-Notations provide a layer of abstraction over the world. Direct cause and effect gives disappears under the layer of abstraction. Notation is a representation of the world, not the world itself.
+	-"Notational systems are designed rather than being prescribed by any necessary constraints, and that the design choices made are subject to tradeoffs between factors that will facilitate some kinds of cognitive task while inhibiting others. There is thus no ideal notation for any programming situation, only designs that are more or less well suited to the activities of the people doing the programming" {Provide an example of how Sanchit's notational system fits the consumers' needs and way of thinking, and/or how it may not.}
+
+-Abstraction as a tool for complexity
+	-Abstraction is for "multiple situations in where the actor need not be present."
+	-Abstractions are useful for managing complexity.
+	-Related to the frame problem and notation use.
+	-"Abstraction... conceptualizes features of complex behavior, then formulates notation abstractions in which to express them..."
+	-Programming is the process of refactoring a problem in accordance with a set of computational formalisms.
+
+Attention investment
+	-"...accounts for the cognitive challenges of loss of direct manipulation, notation use, and development of abstractions."
+	-"Usability theories should be verifiable through cognitive simulation...". {Can I show quantitatively that Sanchit's software increases or decreases the amount of "attention units" required by his consumer to complete a media plan? Model a cognitive simulation in our system on the one in the paper. Decompose the top-level task into a group of sub-tasks, meta-reasoning determines which action at any point has the best cost/benefit ratio, and alternate actions may never be attempted if their ratio is too low.}
+	-"...offers a cost/benefit analysis of abstraction use..."
+	-Relevant factors for developing software are: cost, benefit, pay-off, and risk. {Talk about this from the perspective of the consumer? Can I show that the attention required to learn Sanchit's software is worth the payoff of using it?}
+	-Programming: High attention, high payoff, high risk. Direct manipulation: Moderate attention, low payoff, low risk.
+		-High payoff in the system: reduces error-proneness, which reduces debugging time, which is costly in attentional units.
