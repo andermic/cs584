@@ -1,0 +1,11 @@
+I asked Rob McGuire-Dale, my consumer, to describe the process he goes through as he designs and codes web-based systems.
+
+First he thinks about the best way to split the computation of his system into a frontend client-side half and backend server-side half.
+
+To make the frontend, he will first decide how his site will look by comparing different visual layouts with a whiteboard or scrap paper. Then once he makes the html skeleton, he will make a rough draft of the css and play with different values for color, width, etc. for the various objects in the DOM until the site looks like the design on his mind/whiteboard/paper. Finally, he writes JavaScript that implements any necessary frontend computation or event-driven visual effects.
+
+To make the backend, he forgets about anything visual and graphical, and instead focuses on getting the backend code logic correct. This code typically involves access of a centralized database and/or computation that is too resource intensive to offload on the client's browser. To test the backend code he likes to print sample output to a command-line console. His favorite backend language is Python.
+
+Once the frontend visuals and backend logic are correct, he needs to set up a system that allows the server and client to pass information back and forth to each other. His final step then is to connect the two with the HttpRequest and HttpResponse objects built into Django, his favorite Python web framework. This can be unneccessarily tedious, because it requires communication between an all-purpose backend programming language (Python) and the web-specific frontend languages (HTML, CSS, JavaScript). Python, HTML/CSS, and JavaScript were developed at different times by different groups of people for different purposes.
+
+My consumer wants a thin wrapper around web-development as he knows it. He does not want me to reinvent some new way of representing a web-site that is my personal improvement and replacement of the model/view/controller framework for building websites.
